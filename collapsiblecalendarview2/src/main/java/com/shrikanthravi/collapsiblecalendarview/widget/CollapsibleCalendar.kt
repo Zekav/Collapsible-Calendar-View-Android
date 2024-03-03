@@ -278,7 +278,7 @@ class CollapsibleCalendar : UICalendar, View.OnClickListener {
             for (i in 0..6) {
                 val view = mInflater.inflate(R.layout.layout_day_of_week, null)
                 val txtDayOfWeek = view.findViewById<View>(R.id.txt_day_of_week) as TextView
-                txtDayOfWeek.setText(DateFormatSymbols().getShortWeekdays()[(i + firstDayOfWeek) % 7 + 1])
+                txtDayOfWeek.setText(DateFormatSymbols().getShortWeekdays()[(i + firstDayOfWeek) % 7 + 1].toUpperCase(Locale.getDefault()))
                 view.layoutParams = TableRow.LayoutParams(
                         0,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
