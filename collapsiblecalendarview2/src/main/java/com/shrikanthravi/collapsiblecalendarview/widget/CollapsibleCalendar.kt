@@ -266,7 +266,8 @@ class CollapsibleCalendar : UICalendar, View.OnClickListener {
             // reset UI
             val dateFormat = SimpleDateFormat(tempDatePattern, getCurrentLocale(context))
             dateFormat.timeZone = mAdapter.calendar.timeZone
-            mTxtTitle.text = dateFormat.format(mAdapter.calendar.time)
+            val textM = dateFormat.format(mAdapter.calendar.time)
+            mTxtTitle.text = textM.substring(0, 1).toUpperCase() + textM.substring(1)
             mTableHead.removeAllViews()
             mTableBody.removeAllViews()
 
